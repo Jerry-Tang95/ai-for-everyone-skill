@@ -1,0 +1,122 @@
+{
+  "skill": "ai-for-everyone-router",
+  "version": "1.0",
+  "source_book": "《给所有人的AI入门课》 — 吴恩达 (Andrew Ng)",
+  "darwin_compatible": true,
+  "test_cases": [
+    {
+      "id": "router-trigger-01",
+      "type": "should_trigger",
+      "prompt": "我们要设计一条由识别、分类、生成三段接力的AI链路，各段之间怎么定接口才不出错？",
+      "expected_behavior": "激活来源路由入口，路由到 AI流水线设计 能力卡",
+      "notes": "命中 ai-pipeline 的『多模块串联/端到端』意图——该能力已降级，只能经来源路由入口到达。"
+    },
+    {
+      "id": "router-trigger-02",
+      "type": "should_trigger",
+      "prompt": "竞争对手也在用AI，我们想知道公司还剩下哪些它们抄不走的老本行？",
+      "expected_behavior": "激活来源路由入口，路由到 AI战略护城河 能力卡",
+      "notes": "命中 ai-strategy-moat 的『护城河/可持续优势』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-03",
+      "type": "should_trigger",
+      "prompt": "我们想拉起一支AI小队，应该找哪些背景的人、人数控制在多少？",
+      "expected_behavior": "激活来源路由入口，路由到 AI团队构建 能力卡",
+      "notes": "命中 ai-team-building 的『AI团队/招什么人/团队角色』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-04",
+      "type": "should_trigger",
+      "prompt": "传统企业要整体变成AI驱动的公司，从试点到培训再到战略的完整路线图该怎么排？",
+      "expected_behavior": "激活来源路由入口，路由到 AI转型路线图 能力卡",
+      "notes": "命中 ai-transformation-playbook 的『公司想做AI转型/路线图』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-05",
+      "type": "should_trigger",
+      "prompt": "老板说要把整个运营岗交给AI，我知道这摊子太大，该怎么把它拆成能落地的小块？",
+      "expected_behavior": "激活来源路由入口，路由到 自动化任务而非岗位 能力卡",
+      "notes": "命中 automate-task 的『替代XX岗位/全自动/任务拆解』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-06",
+      "type": "should_trigger",
+      "prompt": "我们想搞一场工作坊，让懂业务的和懂AI的坐在一起挖AI点子，怎么组织？",
+      "expected_behavior": "激活来源路由入口，路由到 跨职能头脑风暴 能力卡",
+      "notes": "命中 cross-functional-brainstorming 的『怎么找AI落地场景/两类专家对齐』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-07",
+      "type": "should_trigger",
+      "prompt": "公司要挑第一个AI试点，是选最容易成功的，还是选价值最高的？",
+      "expected_behavior": "激活来源路由入口，路由到 试点势能飞轮 能力卡",
+      "notes": "命中 pilot-momentum-flywheel 的『第一个AI项目做什么/先求成功再求价值』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-08",
+      "type": "should_trigger",
+      "prompt": "新员工培训和主管轮训的AI内容能一样吗？公司该按什么维度把课程拆开？",
+      "expected_behavior": "激活来源路由入口，路由到 分层AI培训 能力卡",
+      "notes": "命中 role-tiered-training 的『AI培训/不同层级学什么』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-09",
+      "type": "should_trigger",
+      "prompt": "身边没人懂AI，我想一个人入门总没底，有什么办法先把第一步迈出去？",
+      "expected_behavior": "激活来源路由入口，路由到 从小处着手找伙伴 能力卡",
+      "notes": "命中 start-small-find-partner 的『想学AI但不知道从哪开始/想找人一起学』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-10",
+      "type": "should_trigger",
+      "prompt": "这个AI项目要动公司一大笔预算，除了技术，还得考虑哪些方面才不算拍脑袋？",
+      "expected_behavior": "激活来源路由入口，路由到 三重尽职调查 能力卡",
+      "notes": "命中 triple-due-diligence 的『该投入多少/有没有风险/值不值得做』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-trigger-11",
+      "type": "should_trigger",
+      "prompt": "训练模型的数据分散在客户、订单、日志三套系统里，怎么把它们汇到一处给AI用？",
+      "expected_behavior": "激活来源路由入口，路由到 统一数据仓库 能力卡",
+      "notes": "命中 unified-data-warehouse 的『数据孤岛/数据汇聚』意图；降级能力经路由入口可达。"
+    },
+    {
+      "id": "router-notrigger-oos-01",
+      "type": "should_not_trigger",
+      "prompt": "帮我调一下这个模型的学习率和批大小，用网格搜索还是贝叶斯优化？",
+      "expected_behavior": "不应激活本书任何入口（none）",
+      "notes": "越界负例：具体超参数调优属全书明确的 out_of_scope（算法与工程实现细节），既不该进路由入口也不该进任何晋级 Skill。"
+    },
+    {
+      "id": "router-notrigger-oos-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我看看这段PyTorch训练代码，loss一直变成NaN，怎么改？",
+      "expected_behavior": "不应激活本书任何入口（none）",
+      "notes": "越界负例：可运行代码的调试与实现超出『退到决策与通识』的边界，应转算法/工程专家。"
+    },
+    {
+      "id": "router-notrigger-oos-03",
+      "type": "should_not_trigger",
+      "prompt": "我们这个行业做AI要过哪些监管合规审查，需要准备什么法律材料？",
+      "expected_behavior": "不应激活本书任何入口（none）",
+      "notes": "越界负例：正式合规意见与法律结论应转交专业合规与法务判断，本书不提供合规结论。"
+    },
+    {
+      "id": "router-notrigger-rev-01",
+      "type": "should_not_trigger",
+      "prompt": "我们计划训练一个客户流失预测模型，需要准备多少条历史样本才算够？",
+      "expected_behavior": "不应激活来源路由入口，应直接激活 ml-feasibility 晋级 Skill",
+      "notes": "反向互斥负例：数据充足性判定属晋级 Skill ml-feasibility，路由入口不应截胡——路由入口只承接 11 个降级能力。"
+    },
+    {
+      "id": "router-notrigger-rev-02",
+      "type": "should_not_trigger",
+      "prompt": "我们模型在测试集上做到95%准确率，这个水平算不算达标、能不能上线？",
+      "expected_behavior": "不应激活来源路由入口，应直接激活 statistical-acceptance 晋级 Skill",
+      "notes": "反向互斥负例：『这个准确率够不够』属晋级 Skill statistical-acceptance 的验收线判定，应直达该 Skill 而非走路由入口。"
+    }
+  ],
+  "minimum_pass_rate": 0.8,
+  "notes": "v2.5 迁移：2026-09-12，含跨入口互斥负例"
+}
